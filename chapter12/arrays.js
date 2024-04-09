@@ -180,3 +180,25 @@ let a = { prop: [1,2], obj: {}};
 let b = { prop: [1,2], obj: {}};
 
 console.log(objcmp(a,b)); // false
+
+// Our algorithm failed on [1,2] === [1,2] comparison. So how do we deal with
+// this situation? First, we can write our own is array function. Because array is
+// the only object in JavaScript with length property and at least 3 higher-order
+// functions: lter, reduce and map, we can say that if these methods exist on an
+// object, then it must be an array, with roughly 99% certainty:
+
+function is_array(value) {
+    return typeof value.reduce == "function" && 
+            typeof value.filter == "function" &&
+            typeof value.map == "function" &&
+            typeof value.length == "number";
+}
+
+// Test the function
+
+console.log(is_array(1)); // false
+console.log(is_array("string")); //false
+console.log(is_array({a: 1})); // false
+console.log(is_array(true)); // false
+console.log(is_array([])); // true
+console.log(is_array([1,2,3,4,5])); // true
