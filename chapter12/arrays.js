@@ -173,3 +173,10 @@ function objcmp(a, b) {
 let comresult = objcmp({age: 27, name: 'saadullah dar'}, {name: 'saadullah dar', age: 27})
 
 console.log("result", comresult);
+
+// for nested objects above function will fail
+
+let a = { prop: [1,2], obj: {}};
+let b = { prop: [1,2], obj: {}};
+
+console.log(objcmp(a,b)); // false
