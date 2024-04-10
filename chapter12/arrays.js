@@ -94,3 +94,6 @@ console.log(flatMap); // [ 1, 2, 2, 4,  3, 6, 4, 8, 5, 10 ]
 let string = "Hello";
 let matches = string.match("l");
 console.log(matches[0]); // "l"
+
+let regMatches = string.match(/l/);
+console.log(regMatches[0]);
