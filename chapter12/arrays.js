@@ -97,3 +97,8 @@ console.log(matches[0]); // "l"
 
 let regMatches = string.match(/l/);
 console.log(regMatches[0]);
+
+// /g to get the multiple matches
+
+let ret = string.match(/l/g);
+console.log(ret);
