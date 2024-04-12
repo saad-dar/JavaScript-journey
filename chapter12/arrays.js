@@ -68,3 +68,12 @@ console.log(num);
 
 let count = [1,2,3,4,5].reduce((a,b) => a + b, 0)
 console.log(count);
+
+// array.flat()
+
+let multi = [1, 2, 3, [4, 5, 6, [7, 8, 9, [10, 11, 12]]]];
+
+console.log(multi.flat()); // [ 1, 2, 3, 4, 5, 6, [ 7, 8, 9, [ 10, 11, 12 ] ] ]
+console.log(multi.flat().flat()); // [ 1, 2, 3, 4, 5, 6, 7, 8, 9, [ 10, 11, 12 ] ]
+console.log(multi.flat().flat().flat()); // [ 1,  2, 3, 4,  5, 6,  7, 8, 9, 10, 11, 12 ]
+console.log(multi.flat(Infinity)); // [ 1,  2, 3, 4,  5, 6,  7, 8, 9, 10, 11, 12 ]
