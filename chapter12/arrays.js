@@ -77,3 +77,14 @@ console.log(multi.flat()); // [ 1, 2, 3, 4, 5, 6, [ 7, 8, 9, [ 10, 11, 12 ] ] ]
 console.log(multi.flat().flat()); // [ 1, 2, 3, 4, 5, 6, 7, 8, 9, [ 10, 11, 12 ] ]
 console.log(multi.flat().flat().flat()); // [ 1,  2, 3, 4,  5, 6,  7, 8, 9, 10, 11, 12 ]
 console.log(multi.flat(Infinity)); // [ 1,  2, 3, 4,  5, 6,  7, 8, 9, 10, 11, 12 ]
+
+// array.flatMap() in javascript
+
+let array = [1, 2, 3, 4, 5];
+let mapResult = array.map(x => [x, x * 2]);
+console.log(mapResult); // [ [ 1, 2 ], [ 2, 4 ], [ 3, 6 ], [ 4, 8 ], [ 5, 10 ] ]
+
+// array.flatMap flatten the result of map function
+
+let flatMap = array.flatMap(v => [v, v * 2]);
+console.log(flatMap); // [ 1, 2, 2, 4,  3, 6, 4, 8, 5, 10 ]
