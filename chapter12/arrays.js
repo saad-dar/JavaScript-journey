@@ -88,3 +88,9 @@ console.log(mapResult); // [ [ 1, 2 ], [ 2, 4 ], [ 3, 6 ], [ 4, 8 ], [ 5, 10 ] ]
 
 let flatMap = array.flatMap(v => [v, v * 2]);
 console.log(flatMap); // [ 1, 2, 2, 4,  3, 6, 4, 8, 5, 10 ]
+
+//  String.prototype.matchAll()
+
+let string = "Hello";
+let matches = string.match("l");
+console.log(matches[0]); // "l"
