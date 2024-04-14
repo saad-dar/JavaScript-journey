@@ -52,3 +52,12 @@ console.log(every, some)
 let filtered = numbers.filter(condition);
 console.log(filtered); // [ 0, 2, 3, 4, 5, 6, 7]
 console.log(numbers); 
+
+// array.map
+
+let num = [0, 1, 256, 3, 4, 5, 6, 7];
+
+let result = num.map(value => value = value + 1);
+
+console.log(result);
+console.log(num);
