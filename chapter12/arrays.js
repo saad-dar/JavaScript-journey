@@ -50,5 +50,5 @@ console.log(every, some)
 // array.filter in javascript
 
 let filtered = numbers.filter(condition);
-console.log(filtered);
+console.log(filtered); // [ 0, 2, 3, 4, 5, 6, 7]
 console.log(numbers); 
