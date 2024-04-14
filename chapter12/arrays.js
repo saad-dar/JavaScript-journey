@@ -61,3 +61,10 @@ let result = num.map(value => value = value + 1);
 
 console.log(result);
 console.log(num);
+
+// array.reduce
+// array.reduce is a father of array.map and array.filter 
+// anything that can be done with .map and .filter, can be done with .reduce function
+
+let count = [1,2,3,4,5].reduce((a,b) => a + b, 0)
+console.log(count);
