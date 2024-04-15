@@ -37,3 +37,12 @@ fruit1.forEach(item => console.log(item));
 let arr = [12, 13, 45, 56];
 
 console.log(arr.every(item => item > 10))
+
+// array.every and array.some
+
+let numbers = [0, 10, 2, 3, 4, 5, 6, 7];
+let condition = value => value < 10; // value is less than 10
+let some = numbers.some(condition); // true
+let every = numbers.every(condition); // false
+
+console.log(every, some)
