@@ -12,3 +12,22 @@ let my_sort = (a,b) => a.count - b.count;
 
 let sorted = fruit.sort(my_sort);
 console.log(sorted);
+
+//  array.forEach()
+let fruit1= ['pear', 'banana', 'orange', 'apple', 'pineapple'];
+
+let print = function(item, index, object) {
+    console.log(item, index, object)
+}
+
+fruit1.forEach( print )
+
+fruit1.forEach(function(item, index, object){
+    console.log(item, index, object);
+})
+
+fruit1.forEach((item, index, object) => {
+    console.log(item, index, object);
+})
+
+fruit1.forEach(item => console.log(item));
