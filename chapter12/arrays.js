@@ -31,3 +31,9 @@ fruit1.forEach((item, index, object) => {
 })
 
 fruit1.forEach(item => console.log(item));
+
+// array.every()
+
+let arr = [12, 13, 45, 56];
+
+console.log(arr.every(item => item > 10))
