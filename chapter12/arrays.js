@@ -46,3 +46,9 @@ let some = numbers.some(condition); // true
 let every = numbers.every(condition); // false
 
 console.log(every, some)
+
+// array.filter in javascript
+
+let filtered = numbers.filter(condition);
+console.log(filtered);
+console.log(numbers); 
