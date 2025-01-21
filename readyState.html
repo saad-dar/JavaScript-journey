@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>ready state</title>
+        <script>
+            function load() {
+                alert('DOM loaded.');
+            }
+            function loadElse() {
+                alert('DOM loaded else.');
+            }
+            if (document.readyState == "loading") {
+                document.addEventListener("DOMContentLoaded", load);
+            } else {
+                loadElse()
+            }
+        </script>
+    </head>
+</html>
