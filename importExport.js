@@ -1,1 +1,2 @@
-export function Mouse() {this.x = 0 ; this.y = 0;}
+export function Mouse() {this.x = 256 ; this.y = 128;}
+export function Keyboard() {this.shiftIsPressed = false}
