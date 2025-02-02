@@ -1,0 +1,1 @@
+console.log("hello".toUpperCase().substring(1, 4));
