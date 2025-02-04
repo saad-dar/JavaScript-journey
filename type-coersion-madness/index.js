@@ -61,3 +61,16 @@ console.log(Number("1")) // 1
 const num1 = 1
 console.log(-num1)
 console.log(+num1)
+
+// number and string arithmetic
+
+console.log(7 + 5); // 12
+
+// if one is string coersion happens and concatination is perfomed
+console.log("1" + 1); // 11
+
+console.log('1' + '1');
+
+// there are three + operators : unary, arithmetic and string
+
+console.log(1 + 'o1'); // 1o1
