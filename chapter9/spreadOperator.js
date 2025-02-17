@@ -55,3 +55,25 @@ let deep = {
 let { name, shape, weight } = deep.basket.fruit
 
 console.log(name, shape, weight); // orange rounf 0.2
+
+// if property does not exist in the object
+let { apples } = { oranges : 1 };
+console.log(apples); // undefined
+
+// destructure and rename at the same time
+let { automobile : car } = { automobile : "Tesla" };
+console.log(car); // "Tesla"
+
+// merging objects with ...spread
+
+let g = { p: 1, q: 2, m: ()=> {} };
+let f = { r: 1, s: 2, n: ()=> {} };
+
+let c = { ...g, ...f };
+
+console.log(c)
+
+let arr1 = [1,2];
+let arr2 = [3,4];
+let joinArr = [...arr1, ...arr2];
+console.log(joinArr);
