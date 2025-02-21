@@ -79,6 +79,7 @@ function closure() {
         delete this.inc; // becomes undefined
         this.inc = null; // additionally reset it to null
         console.log("this.inc deleted");
+        return this.inc;
     }
 
     function readd() {
@@ -110,3 +111,42 @@ console.log(sett(7)); // 7
 console.log(get()); // 7 
 console.log(res(0)); // 0
 console.log(get())
+
+
+// Delete property
+console.log("del(0)", del(0)); // null
+console.log("get()", get()); // null
+
+
+// Arity : number of arguments a function takes
+
+// Define a function with 3 parameters
+
+function f2(a, b, c) {
+}
+
+let arity = f2.length;
+
+console.log(arity)
+
+// Currying 
+
+let planets = function(a) {
+    return function(b) {
+        return "Favorite planets are " + a + " and " + b
+    };
+};
+
+let FavoritePlanets = planets("Jupiter");
+
+// call the curried function with different arguments
+
+console.log(FavoritePlanets("Earth"));
+console.log(FavoritePlanets("Jupiter"));
+console.log(FavoritePlanets("Saturn"));
+
+console.log(planets("Jupiter")("Mars"));
+
+let planetsArrow = (a) => (b) => "Planets are " + a + " and " + b;
+
+console.log(planetsArrow("Venus")("Mars"));
