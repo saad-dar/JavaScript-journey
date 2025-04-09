@@ -62,3 +62,28 @@ for(let i=0; i < 10; i++) {
 
 console.log(counter);
 
+// for loops and let scope
+
+// bracket less for loop does not allow varialbe declaration using let
+// following code will generate an error
+// for(var i=0; i< 10; i++) let x =1; 
+
+// correct way to daclare a variable using bracket for loop
+
+for(var i =0;i < 10; i++) {
+    let x = i;
+}
+
+// nested for loops
+
+for (let y =0; y< 2; y++) {
+    for (let x=0; x < 2; x++) {
+        console.log(x, y);
+    }
+}
+
+for (let i=0; i< 3; i++) {
+    let loop = "loop."
+    console.log(loop);
+}
+
