@@ -159,3 +159,9 @@ let array = [0, 1, 2];
 for (let value of array)
     console.log(value)
 
+// for...of and object
+
+let object = { a: 1, b: 2, c: 3};
+
+for (let value of object) // TypeError: object is not iterable
+    console.log(value)
