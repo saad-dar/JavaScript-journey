@@ -26,3 +26,11 @@ const R = (accumulator, value) => accumulator + value;
 const result = miles.reduce(R);
 console.log(result); // 99
 
+// generating HTML Element Dynamically
+
+// for (let i =0; i < 10; i++) {
+//     let element = document.createElement("div");
+
+//     element.innerHTML = "element" + i;
+//     document.appendChild(element);
+// }
