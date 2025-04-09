@@ -161,7 +161,22 @@ for (let value of array)
 
 // for...of and object
 
-let object = { a: 1, b: 2, c: 3};
+// let object = { a: 1, b: 2, c: 3};
 
-for (let value of object) // TypeError: object is not iterable
-    console.log(value)
+// for (let value of object) // TypeError: object is not iterable
+//     console.log(value)
+
+
+// for...of and objects converted to iterables
+let enumerable = { property: 1, method: () => {} };
+
+for (let key of Object.keys(enumerable)) {
+    console.log(key)
+}
+
+for (let value of Object.values(enumerable)) 
+    console.log(value);
+
+for (let entry of Object.entries(enumerable)){
+    console.log(entry)
+}
