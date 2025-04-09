@@ -34,3 +34,21 @@ console.log(result); // 99
 //     element.innerHTML = "element" + i;
 //     document.appendChild(element);
 // }
+
+// infinite loop
+/**
+ for(;;)
+     console.log('hi');
+ */
+
+//  multiple statement
+
+// bodyless for loop
+
+let counter = 0;
+
+function inc() { counter ++}
+for (let i=0; i < 10; i++, inc());
+console.log(counter);  // 10
+
+
