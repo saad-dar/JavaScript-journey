@@ -87,3 +87,29 @@ for (let i=0; i< 3; i++) {
     console.log(loop);
 }
 
+// skipping steps
+
+for (let i=0; i<3; i++) {
+    if(i == 1) 
+        continue;
+    console.log(i);
+}
+
+// Breaking Early
+for (let i=0;; i++) {
+    console.log("loop");
+    if(i == 10) break;
+}
+
+// breaking to label
+
+let c = 0;
+mark: for (let i=0; i< 5; i++) {
+    inner: for (let j=0; j< 5; j++) {
+        c++;
+        if(i == 2)
+            break inner;
+    }
+}
+console.log(c); // 21
+
