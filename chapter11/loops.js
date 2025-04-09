@@ -44,11 +44,21 @@ console.log(result); // 99
 //  multiple statement
 
 // bodyless for loop
-
+/*
 let counter = 0;
 
 function inc() { counter ++}
 for (let i=0; i < 10; i++, inc());
 console.log(counter);  // 10
+*/
 
+// incrementing Numbers
+
+let counter =0;
+
+for(let i=0; i < 10; i++) {
+    counter++
+}
+
+console.log(counter);
 
