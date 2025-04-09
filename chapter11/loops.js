@@ -192,3 +192,20 @@ let object = {
 
 for (let value in object) 
     console.log(value, object[value]);
+
+// while loop
+
+let wv =0;
+while (wv++ < 5) {
+    console.log(wv)
+}
+
+// while and continue
+
+let wc = 0;
+
+while (wc++ < 1000) {
+    if(wc < 1) 
+        continue;
+    console.log(wc);
+}
