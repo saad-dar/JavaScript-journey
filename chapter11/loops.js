@@ -180,3 +180,15 @@ for (let value of Object.values(enumerable))
 for (let entry of Object.entries(enumerable)){
     console.log(entry)
 }
+
+// for...in loops
+
+let object = {
+    a: 1,
+    b: 2,
+    c: 3,
+    method: () => { }
+}
+
+for (let value in object) 
+    console.log(value, object[value]);
