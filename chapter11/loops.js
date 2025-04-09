@@ -113,3 +113,11 @@ mark: for (let i=0; i< 5; i++) {
 }
 console.log(c); // 21
 
+// breaking from a labeled block scope
+
+block: {
+    console.log("before");
+    break block;
+    console.log("after");
+}
+
