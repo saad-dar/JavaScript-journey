@@ -20,3 +20,9 @@ for(let i = 0; i < 5; i++) {
 
 console.log(A); // 99
 
+// a reducer function of the same above effect
+
+const R = (accumulator, value) => accumulator + value;
+const result = miles.reduce(R);
+console.log(result); // 99
+
