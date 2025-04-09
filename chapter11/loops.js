@@ -145,3 +145,17 @@ console.log("fourth try", gen.next().value);
 // function more than once as if it were a regular function (after the last yield
 //  statement has been executed.)
 
+// for...of and string
+
+// arrays are iterables
+// strings are iterables
+let string = 'text';
+
+for(let value of string) 
+    console.log(value);
+
+let array = [0, 1, 2];
+
+for (let value of array)
+    console.log(value)
+
