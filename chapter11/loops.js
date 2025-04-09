@@ -121,3 +121,27 @@ block: {
     console.log("after");
 }
 
+// for...of and generator function
+
+function* generator() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+for (let value of generator()) 
+    console.log(value);
+
+// above for loop is equivalent to below code
+
+let gen = generator();
+
+console.log("first one", gen.next().value);
+console.log("second one" ,gen.next().value);
+console.log("third one", gen.next().value);
+console.log("fourth try", gen.next().value);
+
+// Generators are one-time use functions. You should not attempt to reuse a generator 
+// function more than once as if it were a regular function (after the last yield
+//  statement has been executed.)
+
