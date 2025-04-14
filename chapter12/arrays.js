@@ -102,3 +102,19 @@ console.log(regMatches[0]);
 
 let ret = string.match(/l/g);
 console.log(ret);
+
+// regular expression capture group
+
+const groupString = 'black*raven lime*parrot white*seagull';
+const regex = /(?<color>.*?)\*(?<bird>[a-z0-9]+)/g;
+
+while(match = regex.exec(groupString)) {
+    let value = match[0];
+    let index = match.index;
+    let input = match.input;
+
+    console.log(`${value} at ${index} with '${input}`);
+
+    console.log(match.groups.color);
+    console.log(match.groups.bird);
+}
