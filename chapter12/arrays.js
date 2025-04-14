@@ -124,3 +124,18 @@ let iterator = "hello".matchAll(/[el]/g);
 for (const match of iterator) {
     console.log(match)
 }
+
+// regular expression capture group using matchAll
+
+const stringGro = 'black*raven lime*parrot white*seagull';
+const regexGro = /(?<color>.*?)\*(?<bird>[a-z0-9]+)/g;
+
+for (const match of stringGro.matchAll(regexGro)) {
+    let value = match[0];
+    let index = match.index;
+    let input = match.input;
+
+    console.log(`${value} at ${index} with ${input}`)
+    console.log(match.groups.color);
+    console.log(match.groups.birds);
+}
