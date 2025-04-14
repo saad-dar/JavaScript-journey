@@ -139,3 +139,37 @@ for (const match of stringGro.matchAll(regexGro)) {
     console.log(match.groups.color);
     console.log(match.groups.birds);
 }
+
+// comparing two objects
+
+console.log([] == []) // false by value
+let x = [];
+console.log(x === x); // true by reference
+
+function objcmp(a, b) {
+
+    // Copy properties into A and B
+    let A = Object.getOwnPropertyNames(a);
+    let B = Object.getOwnPropertyNames(b);
+
+    // Return early if number of properties is not equal
+    if(A.length != B.length) 
+        return false;
+
+    // Walk and compare all properties on both objects
+    for(let i=0; i< A.length; i++){
+        let propName = A[i];
+
+        // properties must equal by value and type
+        if (a[propName] !== b[propName]) {
+            return false;
+        }
+    }
+
+    // object are equal
+    return true;
+}
+
+let comresult = objcmp({age: 27, name: 'saadullah dar'}, {name: 'saadullah dar', age: 27})
+
+console.log("result", comresult);
