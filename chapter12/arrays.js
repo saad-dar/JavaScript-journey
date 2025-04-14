@@ -118,3 +118,9 @@ while(match = regex.exec(groupString)) {
     console.log(match.groups.color);
     console.log(match.groups.bird);
 }
+
+// Match all occurences of the letters: "e" or "l"
+let iterator = "hello".matchAll(/[el]/g);
+for (const match of iterator) {
+    console.log(match)
+}
