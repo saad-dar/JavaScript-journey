@@ -237,3 +237,81 @@ console.log(arrcmp(arr1, arr2)); // true
 console.log(arrcmp(arr2, arr2)); // true
 console.log(arrcmp(arr2, arr3)); // false
 
+// enhace algorithm for obj cmp
+
+function objcmpEnhance(a, b) {
+    // copy properties into A and B
+    let A = Object.getOwnPropertyNames(a);
+    let B = Object.getOwnPropertyNames(b);
+
+    // Return early if humber of properties is not equal
+
+    if (A.length != B.length) {
+        return false
+    }
+
+    // walk and compare all properties on both objects
+
+    for (let i=0; i< A.length; i++) {
+        let propName = A[i];
+        let p1 = a[propName];
+        let p2 = b[propName];
+        // property points to an array
+        if(is_array(p1) && is_array(p2)) {
+            if (!arrcmp(p1, p2))
+                return false
+        } else{
+            // property ponts to an object
+            if(p1.constructor === Object && p2.constructor === Object) {
+                if (!objcmpEnhance(p1, p2))
+                    return false;
+            } else if (p1 !== p2) {
+                return false
+            }
+        }
+    }
+    return true
+}
+
+let M = {
+    a: 1, 
+    b: 100n,
+    C: {},
+    d: [1,2],
+    e: "abc",
+    f: true,
+    g: () => {}
+};
+
+let N = {
+    a: 1,
+    b: 100n,
+    C: {},
+    d: [1,2],
+    e: "abc",
+    f: true,
+    g: () => {}
+}
+
+let O = {
+    a: 1, 
+    b: 100n,
+    C: {},
+    d: [5,7],
+    e: "abc",
+    f: true,
+    g: () => {}
+}
+console.log(objcmpEnhance(M, M)); // true
+console.log('hi', objcmpEnhance(M, N)); // true
+console.log('hello', objcmpEnhance(M, O)); // false
+
+let newA = { prop: [1,2], obj: {} };
+let newB = { prop: [1,2], obj: {} };
+
+console.log(objcmpEnhance(a, b)); // true
+
+console.log(objcmpEnhance({a: [1, 2]}, {a:[1,2]})); // true
+console.log(objcmpEnhance({a: [b, 1]}, {a:[b,1]})); // true
+console.log(objcmpEnhance({a: [1, 2]}, {a:[1,3]})); // false
+console.log(objcmpEnhance({a: [b, 1]}, {a:[b,2]})); // false
