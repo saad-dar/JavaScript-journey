@@ -27,3 +27,12 @@ function Fun(text, number, array, object, func, misc) {
 function Volleyball() { return "Volleyball" }
 
 Fun("Text", 125, [1,2,3], {count: 1}, Volleyball, Volleyball());
+
+function Fun(func) {
+    console.log(func()); // Call the function by its parameter name
+}
+
+var array = [];
+var f = function() {}
+
+Fun(array); // TypeError: func is not a function
