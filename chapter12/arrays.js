@@ -202,3 +202,38 @@ console.log(is_array({a: 1})); // false
 console.log(is_array(true)); // false
 console.log(is_array([])); // true
 console.log(is_array([1,2,3,4,5])); // true
+
+
+// writing array comparison
+
+let arr1 = [1, 2];
+let arr2 = [1, 2];
+let arr3 = [5, 5];
+
+function arrcmp(a, b) {
+    // one or more values are not arrays:
+    if(!(is_array(a) && is_array(b))) {
+        return false;
+    }
+
+    // Not equal by length
+    if(a.length != b.length) {
+        return false
+    }
+
+    // compare by value
+    for(let i=0; i< a.length; i++) {
+        if(a[i] != b[i]){
+            return false
+        }
+    }
+
+    // all test passed: arrays a and b are equal
+    return true;
+}
+
+console.log('array comparison:')
+console.log(arrcmp(arr1, arr2)); // true
+console.log(arrcmp(arr2, arr2)); // true
+console.log(arrcmp(arr2, arr3)); // false
+
