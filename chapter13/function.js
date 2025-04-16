@@ -29,7 +29,10 @@ function Volleyball() { return "Volleyball" }
 Fun("Text", 125, [1,2,3], {count: 1}, Volleyball, Volleyball());
 
 function Fun(func) {
-    console.log(func()); // Call the function by its parameter name
+    // Call the funtion but only if it is a function
+
+    if(typeof func == "function")
+        console.log(func()); // Call the function by its parameter name
 }
 
 var array = [];
