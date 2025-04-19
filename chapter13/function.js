@@ -39,3 +39,15 @@ var array = [];
 var f = function() {}
 
 Fun(array); // TypeError: func is not a function
+
+// this keyword in node
+
+function Orange() {
+    console.log("this", this);
+}
+
+// Call function
+Orange();
+
+// Use function to instantiate an object
+let orange = new Orange(); // orange
