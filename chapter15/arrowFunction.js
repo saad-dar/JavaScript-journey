@@ -39,7 +39,7 @@ let time = a => { "won't return"; }
 
 boomerang(1); // "returns"
 karma(1); // "returns"
-time(1); // [undefined]
+time(1); // [undefinec]
 
 // Be careful when using with high-order functions
 
@@ -52,3 +52,40 @@ console.log(x);
 console.log(prayer);
 console.log(time);
 
+// sometimes true.
+console.log(prayer("Make me understand JavaScript."));
+
+// arrow function bind this to global in global scope just like classic function
+function classic_one() {
+    console.log("classic function one.")
+    console.log("classic_one", this)
+}
+
+function classic_two() {
+    console.log("classic function two.")
+    console.log("classic_one", this)
+}
+
+let arrow = () => {
+    console.log("arrow function.");
+    console.log("arrow", this);
+}
+
+classic_one();
+classic_two();
+arrow();
+
+let aarrow = () => {
+    console.log(arguments); // arguments is not defined
+}
+
+function f() {
+    console.log(arguments); // [object Arguments]
+}
+
+arrow();
+f();
+
+// The arrow function inherits the lexical scope based on where it was used, not
+// where it was defined. Here it so happens that the arrow function was both defined
+// and called in global scope context (Window object.)
