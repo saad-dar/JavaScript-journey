@@ -39,4 +39,16 @@ let time = a => { "won't return"; }
 
 boomerang(1); // "returns"
 karma(1); // "returns"
-time(1); // [undefinec]
+time(1); // [undefined]
+
+// Be careful when using with high-order functions
+
+let a = [1];
+console.log(a.map(boomerang)); // "returns"
+console.log(a.map(karma)); // "returns"
+console.log(a.map(time)); // [undefined]
+
+console.log(x);
+console.log(prayer);
+console.log(time);
+
