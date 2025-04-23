@@ -39,7 +39,7 @@ let time = a => { "won't return"; }
 
 boomerang(1); // "returns"
 karma(1); // "returns"
-time(1); // [undefinec]
+time(1); // [undefined]
 
 // Be careful when using with high-order functions
 
