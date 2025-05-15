@@ -117,3 +117,51 @@ luna.sleep();  // "Luna is sleeping."
 luna.wander(); // "Luna is wandering."
 luna.eat(1); // "Luna is eating 1 unit(s) of food."
 
+// prototype 
+
+const prototype = {
+    sleep(amount) {
+        this.state = "sleeping";
+        console.log(`${this.name} is ${this.state}.`);
+        this.energy += 1;
+        this.hunger += 1;
+    },
+
+    wakeup(amount) {
+        this.state = "idle";
+        console.log(`${this.name} woke up`);
+    },
+
+    eat(amount) {
+        this.state = "eating";
+        console.log(`${this.name} is ${this.state} ${amount} unit(s) of food`);
+        if(this.hunger -= amount <= 0)
+            this.energy += amount;
+        else
+            this.wakeup();
+    },
+
+    wander(amount){
+        this.state = "wandering";
+        console.log(`${this.name} is ${this.state}.`);
+        if(--this.energy < 1) {
+            this.sleep(5)
+        } 
+    }
+}
+
+function CatPrototype(name, hunger, energy, state) {
+    let cat = {};
+
+    cat.name = name;
+    cat.hunger = hunger;
+    cat.energy = energy;
+    cat.state = state;
+
+    cat.sleep = prototype.sleep;
+    cat.wakeup = prototype.wakeup;
+    cat.eat = prototype.eat;
+    cat.wander = prototype.wander;
+
+    return cat;
+}
