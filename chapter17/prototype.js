@@ -185,3 +185,31 @@ console.log(kitten); // {name: "Luna", state: "sleeping"} // missing 'hunger' pr
 
 console.log(kitten.hunger); // 1 // get this value from catObject bcz catObject is parent 
 
+// back to the future
+
+function CatCreateObject(name, hunger, energy, state) {
+    let cat = Object.create(prototype);
+
+    cat.name = name;
+    cat.hunger = hunger;
+    cat.energy = energy;
+    cat.state = state;
+
+    // We no longer need them here
+    // cat.sleep = prototype.sleep;
+    // cat.wakeup = prototype.wakeup;
+    // cat.eat = prototype.eat;
+    // cat.wander = prototype.wander;
+
+    return cat;
+}
+
+// No matter how many felixes or lunas you create, we are no longer wasting memory
+// on their methods, because they are defined only once
+
+let felix1 = CatCreateObject("Felix", 10, 5, "idle");
+felix1.sleep();
+
+let luna1 = CatCreateObject("Luna", 8, 3, "idle");
+luna1.sleep();
+
