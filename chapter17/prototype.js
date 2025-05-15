@@ -165,3 +165,23 @@ function CatPrototype(name, hunger, energy, state) {
 
     return cat;
 }
+
+// Creating object using Object.create
+
+const catObject = {
+    name: "Felix",
+    state: "idle",
+    hunger: 1,
+}
+
+const kitten = Object.create(catObject);
+kitten.name = "Luna";
+kitten.state = "sleeping";
+
+
+// following behavior is unique to Object.create method
+
+console.log(kitten); // {name: "Luna", state: "sleeping"} // missing 'hunger' property 
+
+console.log(kitten.hunger); // 1 // get this value from catObject bcz catObject is parent 
+
